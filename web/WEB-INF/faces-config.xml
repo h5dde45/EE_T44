@@ -13,8 +13,8 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>books</from-outcome>
-            <to-view-id>/pages/books.xhtml</to-view-id>
+            <from-outcome>fiesta</from-outcome>
+            <to-view-id>/pages/fiesta.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>
