@@ -1,0 +1,144 @@
+/* Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    background: #d7e5ed;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+
+.header{
+    float: left;
+    background: #c7c6cf;
+}
+.logo{
+    height: 80px;
+    width: 80px;
+    margin: 10px 50px;
+    float: left;
+}
+.descr{
+    width: 330px;
+    height: 100px;
+    margin-left: 200px;
+    text-align: center;
+    color: red;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: cursive;
+    float: left;
+}
+.descr p {
+    margin-top: 33px;
+}
+.welcome{
+    height: 80px;
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: serif;
+    float: right;
+}
+.welcome p{
+    margin-top: 20px;
+}
+.search_form{
+    height: 50px;
+    background: #7d8874;
+}
+.search_string{
+    margin: 10px 5px 10px 400px;
+    padding: 0px;
+    padding-left: 5px;
+    height: 30px;
+    border: 0;
+    width: 500px;
+    font-size: 18px;
+}
+.select_menu{
+    margin: 10px 5px 10px 0px;
+    padding: 0;
+    height: 30px;
+    border: 0;
+    width: 150px;
+    font-size: 18px;
+}
+.search_button{
+    margin: 10px 5px 10px 0px;
+    padding: 0;
+    height: 30px;
+    border: 0;
+    width: 100px;
+    font-size: 18px;
+}
+.search_div {
+    float: left;
+    width: 100%;
+}
+.middle{
+    float: left;
+}
+.content{
+    float: left;
+    min-height: 430px;
+    min-width: 1050px;
+}
+.left_menu{
+    border-left: 2px solid chocolate;
+    float: right;
+    min-height: 430px;
+    min-width: 200px;
+}
+.left_menu h3{
+    color: #306108;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0px 15px 25px;
+}
+.table{
+    color: #306108;
+    font-size: 14px;
+    margin: 10px;
+}
+.table p{
+margin: 7px;
+}

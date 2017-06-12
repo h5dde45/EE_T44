@@ -9,6 +9,6 @@ public class LoginController {
     public LoginController() {
     }
     public String login(){
-        return "fiesta";
+        return "mainList";
     }
 }
