@@ -81,6 +81,11 @@ table {
 .welcome p{
     margin-top: 20px;
 }
+.welcome a{
+    margin-top: 20px;
+    text-decoration: none;
+    display: block;
+}
 .search_form{
     height: 50px;
     background: #7d8874;
@@ -122,6 +127,10 @@ table {
     min-height: 430px;
     min-width: 1050px;
 }
+.content p {
+    margin: 20px;
+    font-weight: bold;
+}
 .left_menu{
     border-left: 2px solid chocolate;
     float: right;
@@ -139,6 +148,49 @@ table {
     font-size: 14px;
     margin: 10px;
 }
-.table p{
-margin: 7px;
+.table a:hover, a:active, a:focus{
+      font-weight: bold;
+}
+.table a, a:visited{
+    padding: 5px;
+    display: block;
+    text-decoration: none;
+    color: #306108;
+}
+.col1{
+    vertical-align: top;
+    width: 100px;
+}
+.col2{
+    vertical-align: top;
+    width: 240px;
+}
+.col2 a{
+    font-weight: bold;
+    color: #306108;
+    font-size: 15px;
+}
+.col2 p{
+    font-size: 11px;
+}
+.col3{
+      vertical-align: top;
+      width: 350px;
+    font-weight: bold;
+    color: #306108;
+    font-size: 15px;
+  }
+.col3 p{
+    font-weight: 500;
+    color: #306108;
+    font-size: 12px;
+  }
+.col3 strong{
+    font-weight: 500;
+    color: #306108;
+    font-size: 15px;
+  }
+table {
+    margin-left: 30px;
+
 }

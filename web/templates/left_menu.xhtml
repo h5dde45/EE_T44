@@ -9,10 +9,14 @@
     <h3>
         ${msg.job}
     </h3>
-    <h:dataTable value="${jobs.jobList}" var="j" styleClass="table">
-        <h:column>
-           <p>#{j.name}</p>
-        </h:column>
-    </h:dataTable>
+    <h:form styleClass="table">
+    <ui:repeat value="${jobController.jobList}" var="j">
+
+                <h:commandLink value="#{j.name}" action="#{searchController.fillEmploByJob()}">
+                    <f:param name="job_id" value="#{j.id}"/>
+                </h:commandLink>
+
+    </ui:repeat>
+    </h:form>
 </ui:composition>
 </html>

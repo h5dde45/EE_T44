@@ -11,8 +11,32 @@
     ${msg.mainList}
 </ui:define>
     <ui:define name="content">
-        <h:graphicImage name="images/cranium.jpg" height="155"
-                        width="155"/>
+        <p>
+            <strong>
+
+                ${msg.found} ${searchController.currentEmploList.size()}
+            </strong>
+        </p>
+            <h:dataTable value="${searchController.currentEmploList}" var="e"
+            cellspacing="20px"  columnClasses="col1,col2,col3">
+                <h:column>
+                    <h:graphicImage value="/ShowImage?id=${e.id}" width="120" height="160"/>
+                </h:column>
+                <h:column>
+                    <div>
+                        <p><a href="">#{e.pin}</a> </p>
+                        <p><strong>${msg.fio}: </strong>${e.fio}</p>
+                        <p><strong>${msg.job}: </strong>${e.job}</p>
+                    </div>
+                </h:column>
+                <h:column>
+                    <div>
+                        <p><strong>${msg.descr}</strong></p>
+                        <p>${e.descr}</p>
+                    </div>
+                </h:column>
+            </h:dataTable>
+
     </ui:define>
 
 </ui:composition>

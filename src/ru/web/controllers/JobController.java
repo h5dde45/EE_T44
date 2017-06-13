@@ -1,5 +1,6 @@
-package ru.web.beans;
+package ru.web.controllers;
 
+import ru.web.beans.Job;
 import ru.web.db.Database;
 
 import javax.faces.bean.ApplicationScoped;
@@ -13,13 +14,17 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@ManagedBean
+@ManagedBean(eager = true)
 @ApplicationScoped
-public class Jobs implements Serializable {
+public class JobController implements Serializable {
 
     private ArrayList<Job> jobList = new ArrayList<>();
 
-    private ArrayList<Job> getJobs() {
+    public JobController() {
+        fillJobAll();
+    }
+
+    private ArrayList<Job> fillJobAll() {
         Statement statement = null;
         ResultSet resultSet = null;
         Connection connection = null;
@@ -31,13 +36,14 @@ public class Jobs implements Serializable {
             resultSet = statement.executeQuery("select * from mexican.job order by name");
             while (resultSet.next()) {
                 Job job = new Job();
-                job.setName(resultSet.getString("name"));
                 job.setId(resultSet.getInt("id"));
+                job.setName(resultSet.getString("name"));
+
                 jobList.add(job);
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Jobs.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(JobController.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 if (statement != null) {
@@ -50,7 +56,7 @@ public class Jobs implements Serializable {
                     connection.close();
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(Jobs.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(JobController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 
@@ -58,10 +64,8 @@ public class Jobs implements Serializable {
     }
 
     public ArrayList<Job> getJobList() {
-        if (!jobList.isEmpty()) {
+
             return jobList;
-        } else {
-            return getJobs();
-        }
+
     }
 }
