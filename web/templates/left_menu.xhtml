@@ -12,7 +12,8 @@
     <h:form styleClass="table">
     <ui:repeat value="${jobController.jobList}" var="j">
 
-                <h:commandLink value="#{j.name}" action="#{searchController.fillEmploByJob()}">
+                <h:commandLink value="#{j.name}" action="#{searchController.fillEmploByJob()}"
+                styleClass="${j.id==searchController.selectedJobId ? 'selected_job':''}">
                     <f:param name="job_id" value="#{j.id}"/>
                 </h:commandLink>
 

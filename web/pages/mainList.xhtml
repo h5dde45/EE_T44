@@ -14,17 +14,25 @@
         <p>
             <strong>
 
-                ${msg.found} ${searchController.currentEmploList.size()}
+                ${msg.found} ${searchController.totalEmploCount}
             </strong>
         </p>
             <h:dataTable value="${searchController.currentEmploList}" var="e"
             cellspacing="20px"  columnClasses="col1,col2,col3">
+
                 <h:column>
-                    <h:graphicImage value="/ShowImage?id=${e.id}" width="120" height="160"/>
+                    <h:outputLink value="#{request.contextPath}/PdfContent?id=#{e.id}"
+                                  target="_blank">
+                        <h:graphicImage value="/ShowImage?id=${e.id}" width="120" height="160"/>
+                    </h:outputLink>
                 </h:column>
+
                 <h:column>
                     <div>
-                        <p><a href="">#{e.pin}</a> </p>
+                        <h:outputLink value="#{request.contextPath}/PdfContent?id=#{e.id}"
+                                      target="_blank">
+                            #{e.pin}
+                        </h:outputLink>
                         <p><strong>${msg.fio}: </strong>${e.fio}</p>
                         <p><strong>${msg.job}: </strong>${e.job}</p>
                     </div>
@@ -37,6 +45,18 @@
                 </h:column>
             </h:dataTable>
 
+        <div class="pager">
+            <h:form rendered="#{searchController.totalEmploCount>searchController.emploOnPage}">
+                ${msg.pages}
+                <ui:repeat value="${searchController.pageNambers}" var="pageNamber">
+                    <h:commandLink value="${pageNamber}" action="${searchController.selectPage()}"
+                    styleClass="${pageNamber==searchController.selectPageNumber ? 'selected_page':''}">
+                        <f:param name="page_number" value="${pageNamber}"/>
+                    </h:commandLink>
+                </ui:repeat>
+
+            </h:form>
+        </div>
     </ui:define>
 
 </ui:composition>
