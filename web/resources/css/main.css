@@ -79,12 +79,12 @@ table {
     float: right;
 }
 .welcome p{
-    margin-top: 20px;
+    margin: 10px 0px;
 }
 .welcome a{
-    margin-top: 20px;
+    margin-top: 1px;
     text-decoration: none;
-    display: block;
+    /*display: block;*/
 }
 .search_form{
     height: 50px;

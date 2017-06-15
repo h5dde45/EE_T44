@@ -35,6 +35,13 @@
                         </h:outputLink>
                         <p><strong>${msg.fio}: </strong>${e.fio}</p>
                         <p><strong>${msg.job}: </strong>${e.job}</p>
+                        <p>
+                            <h:outputLink value="#{request.contextPath}/SavePdf"
+                                          target="_blank">
+                                <h:outputText value="#{msg.download}"/>
+                                <f:param name="id" value="#{e.id}"/>
+                            </h:outputLink>
+                        </p>
                     </div>
                 </h:column>
                 <h:column>

@@ -18,6 +18,10 @@
 
     <div class="welcome">
         <h:form>
+            <p>
+                <h:commandLink action="#{localeChanger.changeLocale('ru')}">ru  </h:commandLink>
+                <h:commandLink action="#{localeChanger.changeLocale('en')}">en</h:commandLink>
+            </p>
             <p>${msg.welcome}, ${user.username}</p>
             <h:commandLink action="${loginController.exit()}" value="${msg.exit}"/>
         </h:form>
