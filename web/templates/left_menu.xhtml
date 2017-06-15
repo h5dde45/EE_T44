@@ -15,6 +15,7 @@
                 <h:commandLink value="#{j.name}" action="#{searchController.fillEmploByJob()}"
                 styleClass="${j.id==searchController.selectedJobId ? 'selected_job':''}">
                     <f:param name="job_id" value="#{j.id}"/>
+
                 </h:commandLink>
 
     </ui:repeat>

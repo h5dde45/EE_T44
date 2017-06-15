@@ -18,7 +18,7 @@
             </strong>
         </p>
             <h:dataTable value="${searchController.currentEmploList}" var="e"
-            cellspacing="20px"  columnClasses="col1,col2,col3">
+            cellspacing="20px"  columnClasses="col1,col2,col3" id="contentTable">
 
                 <h:column>
                     <h:outputLink value="#{request.contextPath}/PdfContent?id=#{e.id}"

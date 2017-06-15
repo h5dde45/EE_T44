@@ -9,6 +9,7 @@
 <h:head>
     <title>${msg.welcome_title}</title>
     <h:outputStylesheet library="css" name="index.css"/>
+    <h:outputScript library="js" name="emplo.js"/>
 </h:head>
 <h:body>
     <div class="main">
@@ -28,10 +29,14 @@
                 <h:inputText style="margin-left: 5px" id="username" value="#{user.username}"
                              required="true" requiredMessage="${msg.login_required}">
                     <f:validator validatorId="loginValidator"/>
+                    <f:ajax event="keyup" render="loginError"/>
                 </h:inputText>
+
                 <h:commandButton action="mainList" value="${msg.enter}"
-                                 style="margin-left: 3px"/>
-                <p><h:message for="username" styleClass="error"/></p>
+                                 style="margin-left: 3px"
+                onclick="return checkValue(this.form,'#{msg.login_required}')"/>
+
+                <p><h:message id="loginError" for="username" styleClass="error"/></p>
             </h:form>
         </div>
     </div>
